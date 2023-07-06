@@ -1,0 +1,21 @@
+<section class="row">
+  <div class="col-12 col-xl-2" *ngFor="let user of users">
+
+    <mat-card class="card-user">
+      <mat-card-header>
+        <mat-card-title>{{ user.name.title }} {{ user.name.first }} </mat-card-title>
+        <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="user.picture.large" [alt]="user.name.title + user.name.first + user.name.last">
+      
+      <mat-card-actions class="d-flex justify-content-around">
+        <button mat-button>DETAILS</button>
+        <button mat-button color="warn" (click)="openConfirmationDialog(user.id.name)">
+          Excluir
+        </button>
+        
+      </mat-card-actions>
+    </mat-card>
+    
+  </div>
+</section>
